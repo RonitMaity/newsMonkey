@@ -9,7 +9,7 @@ export class News extends Component {
     return (
         <>
         <div>News</div>
-        <NewsItem/>
+        <NewsItem title="myTitle" description = "myDesc"/>
         </>
     )
   }
