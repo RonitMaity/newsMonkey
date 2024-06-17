@@ -1308,15 +1308,25 @@ export class News extends Component {
 
   constructor(){
     super();
-    console.log(articles)
+    this.state = {
+        articles : this.articles
+    }
 }
 
   render() {
     return (
-        <>
-        <div>News</div>
-        <NewsItem title="myTitle" description = "myDesc" imageUrl="https://s.yimg.com/ny/api/res/1.2/APmNatbOT7Ud03AEXlUMsg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2024-06/6d2d9070-2b52-11ef-a7ff-07085b1db9a8" />
-        </>
+        <div className='container my-3'>
+        <h2>Top headlines</h2>
+
+        <div className='row'>
+            {this.state.articles.map((element) =>{
+                return <div className='col-md-4' key={element.url}>
+                <NewsItem title={element.title?.slice(0,20)} description = {element.description?.slice(0,40)} imageUrl={element.urlToImage} newsUrl = {element.url}/>
+                </div>
+            })}
+            
+        </div>
+        </ div>
     )
   }
 }
