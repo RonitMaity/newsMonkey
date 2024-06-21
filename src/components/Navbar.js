@@ -15,16 +15,22 @@ export class Navbar extends Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                <a className="nav-link active" aria-current="page" href="/">Top Headlines</a>
               </li>
-              {/* <li className="nav-item">
-                <a className="nav-link" href="/">Link</a>
+              <li className="nav-item">
+                <a className="nav-link" href="/">Business</a>
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Sports
                 </a>
-              </li> */}
+                <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Football</a></li>
+            <li><a class="dropdown-item" href="#">Cricker</a></li>
+            <li><hr class="dropdown-divider"/></li>
+            <li><a class="dropdown-item" href="#">Other</a></li>
+          </ul>
+              </li>
             </ul>
             {/* <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
