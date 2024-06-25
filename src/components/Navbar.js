@@ -18,18 +18,10 @@ export class Navbar extends Component {
                 <a className="nav-link active" aria-current="page" href="/">Top Headlines</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">Business</a>
+                <a className="nav-link" href="/business">Business</a>
               </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Sports
-                </a>
-                <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Football</a></li>
-            <li><a class="dropdown-item" href="#">Cricker</a></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><a class="dropdown-item" href="#">Other</a></li>
-          </ul>
+              <li className="nav-item">
+                <a className="nav-link" href="/sports">Sports</a>
               </li>
             </ul>
             {/* <form className="d-flex" role="search">

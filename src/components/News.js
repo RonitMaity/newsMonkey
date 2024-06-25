@@ -4,7 +4,14 @@ import NewsItem from './NewsItem';
 import Spinner from './Spinner';
 
 export class News extends Component {
+    
+    static defaultProptype = {
+        category : 'general'
+    }
 
+    static propTypes = {
+        category : PropTypes.string
+    }
   constructor(){
     super();
     this.state = {
@@ -21,7 +28,7 @@ async componentDidMount(){
 
 async makeAPiCall(){
     this.state.loading = true;
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=de6735f936e04444998a407a55684e9f&page=${this.state.page}&pagesize=10`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=de6735f936e04444998a407a55684e9f&page=${this.state.page}&pagesize=10`;
     let data = await fetch(url);
     let parsedData = await data.json()
     this.setState({articles : parsedData.articles , totalArticles : parsedData.totalResults , loading:false })
@@ -40,7 +47,7 @@ handleNextClick = async () =>{
   render() {
     return (
         <div className='container my-3'>
-        <h2>Top headlines</h2>
+        <h2>Top {this.props.category}</h2>
         {this.state.loading && <Spinner/>}
         {!this.state.loading && <div className='row'>   
             {this.state.articles?.map((element) =>{
