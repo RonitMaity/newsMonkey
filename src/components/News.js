@@ -48,7 +48,7 @@ fetchMore = () =>{
           dataLength={this.state.articles.length}
           next={this.fetchMore}
           hasMore={this.state.articles.length !== this.state.totalArticles}
-          loader={<div><h1>Loading...</h1></div>}
+          loader={<Spinner/>}
         >
             <div className='container my-3'>
             <div className='row'>   
